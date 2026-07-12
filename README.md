@@ -100,7 +100,7 @@ Open:
 Final Year B.E. Information Technology Student  
 Savitribai Phule Pune University (SPPU)
 
-GitHub: https://github.com/shraddhhhaaa
+GitHub: https://github.com/ShraddhaMune
 
 ---
 
