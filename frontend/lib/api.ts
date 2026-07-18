@@ -1,4 +1,5 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 export interface TranslateResponse {
   translated_code: string;
@@ -9,7 +10,8 @@ export interface TranslateResponse {
 export async function translateCode(
   sourceLanguage: string,
   targetLanguage: string,
-  code: string
+  code: string,
+  programInput: string
 ): Promise<TranslateResponse> {
   const response = await fetch(`${API_URL}/translate`, {
     method: "POST",
@@ -20,6 +22,7 @@ export async function translateCode(
       source_language: sourceLanguage,
       target_language: targetLanguage,
       code,
+      program_input: programInput,
     }),
   });
 

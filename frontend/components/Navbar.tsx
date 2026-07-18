@@ -28,14 +28,14 @@ export default function Navbar() {
           <div className="flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
             <span className="text-xs font-semibold text-cyan-300">
-              Ollama
+               AI Models via OpenRoute
             </span>
           </div>
 
           <div className="flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-blue-400"></span>
             <span className="text-xs font-semibold text-blue-300">
-              qwen2.5-coder
+              qwen3-coder-next
             </span>
           </div>
 

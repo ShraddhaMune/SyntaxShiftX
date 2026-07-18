@@ -5,6 +5,7 @@ class TranslateRequest(BaseModel):
     source_language: str
     target_language: str
     code: str
+    program_input: str = ""
 
 
 class TranslateResponse(BaseModel):

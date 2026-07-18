@@ -48,7 +48,7 @@ export default function Home() {
   const [targetLanguage, setTargetLanguage] = useState("python");
 
   const [sourceCode, setSourceCode] = useState(EXAMPLES.java);
-
+  const [programInput, setProgramInput] = useState("");
   const [translatedCode, setTranslatedCode] = useState("");
   const [executionOutput, setExecutionOutput] = useState("");
   const [explanation, setExplanation] = useState("");
@@ -83,7 +83,8 @@ export default function Home() {
       const data = await translateCode(
         sourceLanguage,
         targetLanguage,
-        sourceCode
+        sourceCode,
+        programInput
       );
 
       setTranslatedCode(data.translated_code || "");
@@ -105,11 +106,12 @@ export default function Home() {
   }
 
   function clearAll() {
-    setSourceCode(EXAMPLES[sourceLanguage]);
-    setTranslatedCode("");
-    setExecutionOutput("");
-    setExplanation("");
-  }
+  setSourceCode(EXAMPLES[sourceLanguage]);
+  setProgramInput("");      // ← NEW
+  setTranslatedCode("");
+  setExecutionOutput("");
+  setExplanation("");
+}
 
   function uploadCode(
     event: React.ChangeEvent<HTMLInputElement>
@@ -298,6 +300,44 @@ export default function Home() {
 
         </div>
 
+        <div className="mt-5 bg-[#101828] rounded-2xl border border-cyan-500/15 p-4">
+
+  <h2 className="text-xl font-bold mb-1">
+  Console Input (Optional)
+</h2>
+
+<p className="text-sm text-gray-400 mb-3">
+  Enter each input on a new line.
+</p>
+
+  <textarea
+  value={programInput}
+  onChange={(e) => setProgramInput(e.target.value)}
+  placeholder={`Example:
+5
+7`}
+  spellCheck={false}
+  className="
+    w-full
+    h-24
+    rounded-xl
+    bg-[#0b1220]
+    border
+    border-cyan-500/20
+    p-4
+    resize-none
+    outline-none
+    text-white
+    font-mono
+    text-sm
+    focus:border-cyan-400
+    focus:ring-2
+    focus:ring-cyan-500/20
+    transition-all
+  "
+/>
+
+</div>
         <div className="grid grid-cols-2 gap-5 mt-5">
 
           <OutputPanel title="Execution Output">
@@ -314,9 +354,11 @@ export default function Home() {
 
     <footer className="mt-10 border-t border-cyan-500/20 py-6 text-center text-gray-400">
 
-    <p>
-        Built with ❤️ using Next.js · FastAPI · Ollama · Monaco Editor
-    </p>
+    
+        <p>
+          Built with ❤️ using Next.js · FastAPI · OpenRouter AI · Monaco Editor
+        </p>
+  
 
     <p className="mt-2 text-cyan-400 font-semibold">
         SyntaxShift X © 2026

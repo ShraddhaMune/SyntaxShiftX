@@ -49,9 +49,10 @@ def translate(request: TranslateRequest):
     )
 
     execution = execute_code(
-        request.target_language,
-        translated,
-    )
+    request.target_language,
+    translated,
+    request.program_input,
+)
 
     explanation = generate_explanation(
         request.source_language,

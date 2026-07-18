@@ -1,7 +1,19 @@
-import ollama
+from openai import OpenAI, APIError
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+)
+
+MODEL = os.getenv(
+    "OPENROUTER_MODEL",
+)
 from .cleaner import clean_translation
 
-MODEL = "qwen2.5-coder:latest"
 
 
 def is_bad_translation(code: str, target: str) -> bool:
@@ -102,19 +114,33 @@ Program:
 """
 
 
+from openai import APIError
+
 def ask_model(prompt):
+    try:
+        response = client.chat.completions.create(
+            model=MODEL,
+            temperature=0,
+            top_p=0.1,
+            max_tokens=1024,
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+        )
 
-    response = ollama.generate(
-        model=MODEL,
-        prompt=prompt,
-        stream=False,
-        options={
-            "temperature": 0,
-            "top_p": 0.1,
-        },
-    )
+        print(response)
 
-    return clean_translation(response["response"])
+        return clean_translation(
+            response.choices[0].message.content
+        )
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return f"ERROR: {e}"
 
 
 def translate_code(source_language, target_language, code):
