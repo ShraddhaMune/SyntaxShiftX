@@ -372,11 +372,10 @@ export default function Home() {
     <footer className="mt-10 border-t border-cyan-500/20 py-6 text-center text-gray-400">
 
     
-        <p>
-          Built by Shraddha Mune
-
-          Powered by
-          Next.js • FastAPI • OpenRouter
+        <p className="text-center text-gray-400 px-4 leading-7">
+          Built by <span className="font-semibold">Shraddha Mune</span>
+          <br />
+          Powered by Next.js • FastAPI • OpenRouter
         </p>
   
 
