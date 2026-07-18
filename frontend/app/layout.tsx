@@ -13,6 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://syntaxshiftx.vercel.app"),
+
   title: "SyntaxShift X",
   description:
     "AI-Powered Programming Language Translator. Translate code between Python, Java, C, C++, JavaScript, and TypeScript using AI.",
@@ -20,13 +22,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SyntaxShift X",
     description: "Translate • Execute • Explain",
-    images: ["/opengraph-image.png"],
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SyntaxShift X",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "SyntaxShift X",
-    description: "Translate • Execute • Explain",
     images: ["/opengraph-image.png"],
   },
 };
