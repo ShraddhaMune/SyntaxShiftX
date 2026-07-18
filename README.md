@@ -1,8 +1,8 @@
 # 🚀 SyntaxShift X
 
-An AI-powered programming language translator built with **Next.js**, **FastAPI**, and **Ollama**.
+An AI-powered programming language translator built with **Next.js**, **FastAPI**, and **OpenRouter**.
 
-SyntaxShift X translates source code between multiple programming languages, executes the translated code locally, and provides concise AI-generated syntax explanations.
+SyntaxShift X translates code between multiple programming languages, executes the translated code with optional console input, and provides concise AI-generated explanations.
 
 ---
 
@@ -10,8 +10,9 @@ SyntaxShift X translates source code between multiple programming languages, exe
 
 - 🤖 AI-powered code translation
 - 💻 Monaco code editor
-- ⚡ Local code execution
-- 🧠 AI syntax explanations
+- ⚡ Code execution
+- ⌨️ Console input support
+- 🧠 AI code explanations
 - 📂 Upload source code files
 - 📋 Copy translated code
 - ⬇️ Download translated code
@@ -32,7 +33,7 @@ SyntaxShift X translates source code between multiple programming languages, exe
 ### Backend
 - FastAPI
 - Python
-- Ollama (Qwen2.5-Coder)
+- OpenRouter API
 
 ### Execution
 - Python
@@ -82,17 +83,6 @@ Open:
 - Backend: http://127.0.0.1:8000
 
 ---
-
-## 📌 Future Improvements
-
-- Interactive program input
-- More programming languages
-- Docker support
-- Cloud deployment
-- Translation history
-
----
-
 ## 👩‍💻 Author
 
 **Shraddha Mune**
