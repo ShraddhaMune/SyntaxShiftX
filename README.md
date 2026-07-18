@@ -1,73 +1,97 @@
-# ==========================
-# Python Backend
-# ==========================
+# 🚀 SyntaxShift X
 
-backend/venv/
-backend/.venv/
-backend/__pycache__/
-backend/**/*.pyc
-backend/temp/
+An AI-powered programming language translator built with **Next.js**, **FastAPI**, and **OpenRouter**.
 
-# Python cache
-*.py[cod]
-*.pyo
-*.pyd
+SyntaxShift X translates code between multiple programming languages, executes the translated code with optional console input, and provides concise AI-generated explanations.
 
-# ==========================
-# Frontend (Next.js)
-# ==========================
+---
 
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/.turbo/
-*.tsbuildinfo
+## ✨ Features
 
-# ==========================
-# Environment Variables
-# ==========================
+- 🤖 AI-powered code translation
+- 💻 Monaco code editor
+- ⚡ Code execution
+- ⌨️ Console input support
+- 🧠 AI code explanations
+- 📂 Upload source code files
+- 📋 Copy translated code
+- ⬇️ Download translated code
+- 🔄 Swap source and target languages
+- 🌙 Modern dark UI
 
-backend/.env
-frontend/.env.local
-.env
-.env.*
-!.env.example
+---
 
-# ==========================
-# Logs
-# ==========================
+## 🛠️ Tech Stack
 
-*.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
+### Frontend
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Monaco Editor
 
-# ==========================
-# Build & Cache
-# ==========================
+### Backend
+- FastAPI
+- Python
+- OpenRouter API
 
-build/
-dist/
-coverage/
-.cache/
+### Execution
+- Python
+- Java
+- JavaScript
+- TypeScript
+- C
+- C++
 
-# ==========================
-# IDE / Editor
-# ==========================
+---
 
-.vscode/
-.idea/
+## 📁 Project Structure
 
-# ==========================
-# Operating System Files
-# ==========================
+```text
+SyntaxShiftX
+├── frontend/
+├── backend/
+├── README.md
+└── .gitignore
+```
 
-.DS_Store
-Thumbs.db
+---
 
-# ==========================
-# Miscellaneous
-# ==========================
+## 🚀 Getting Started
 
-*.tmp
-*.bak
+### Backend
+
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open:
+
+- Frontend: http://localhost:3000
+- Backend: http://127.0.0.1:8000
+
+---
+## 👩‍💻 Author
+
+**Shraddha Mune**
+
+Final Year B.E. Information Technology Student  
+Savitribai Phule Pune University (SPPU)
+
+GitHub: https://github.com/ShraddhaMune
+
+---
+
+⭐ If you found this project interesting, consider giving it a star!
