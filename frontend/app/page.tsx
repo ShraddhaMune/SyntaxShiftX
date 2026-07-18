@@ -54,6 +54,7 @@ export default function Home() {
   const [explanation, setExplanation] = useState("");
 
   const [loading, setLoading] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   function changeSourceLanguage(lang: string) {
@@ -80,12 +81,18 @@ export default function Home() {
     try {
       setLoading(true);
 
+      setLoadingMessage(
+        "🚀 Starting AI server... If this is your first translation, Render may take up to 60 seconds to wake up."
+      );
+
       const data = await translateCode(
         sourceLanguage,
         targetLanguage,
         sourceCode,
         programInput
       );
+
+      setLoadingMessage("⚡ AI is translating your code...");
 
       setTranslatedCode(data.translated_code || "");
       setExecutionOutput(data.execution_output || "");
@@ -97,8 +104,9 @@ export default function Home() {
       setExecutionOutput("");
       setExplanation("");
     } finally {
-      setLoading(false);
-    }
+        setLoading(false);
+        setLoadingMessage("");
+      }
   }
 
   function copyCode() {
@@ -205,6 +213,11 @@ export default function Home() {
             value={targetLanguage}
             onChange={setTargetLanguage}
             />
+            {loading && (
+              <div className="mt-3 rounded-xl border border-cyan-500/20 bg-cyan-500/10 p-4 text-sm text-cyan-300">
+                {loadingMessage}
+              </div>
+            )}
 
         <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
 

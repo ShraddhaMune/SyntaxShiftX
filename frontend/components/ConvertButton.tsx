@@ -34,7 +34,7 @@ export default function ConvertButton({
   ${className}
 `}
     >
-      {loading ? "⚡ Translating..." : "⚡ Translate Code"}
+      {loading ? "⏳ Please wait..." : "⚡ Translate Code"}
     </button>
   );
 }
