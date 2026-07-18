@@ -20,7 +20,7 @@ export default function CodeEditor({
   value,
   onChange,
   readOnly = false,
-  height = "320px",
+  height = "280px",
 }: CodeEditorProps) {
   return (
     <div className="overflow-hidden rounded-xl border border-cyan-500/20 shadow-lg shadow-cyan-500/5">

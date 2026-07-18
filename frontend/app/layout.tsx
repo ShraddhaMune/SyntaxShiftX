@@ -16,18 +16,19 @@ export const metadata: Metadata = {
   title: "SyntaxShift X",
   description:
     "AI-Powered Programming Language Translator. Translate code between Python, Java, C, C++, JavaScript, and TypeScript using AI.",
-  keywords: [
-    "SyntaxShift X",
-    "AI",
-    "Code Translator",
-    "Programming",
-    "Next.js",
-    "FastAPI",
-    "OpenRouter",
-    "Java",
-    "Python",
-    "C++",
-  ],
+
+  openGraph: {
+    title: "SyntaxShift X",
+    description: "Translate • Execute • Explain",
+    images: ["/opengraph-image.png"],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "SyntaxShift X",
+    description: "Translate • Execute • Explain",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({

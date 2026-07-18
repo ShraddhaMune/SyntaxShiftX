@@ -156,9 +156,23 @@ export default function Home() {
 
       <Navbar />
 
-      <section className="max-w-7xl mx-auto px-6 py-6">
+      <div className="text-center py-10">
 
-        <div className="flex items-end gap-5 flex-wrap mb-6">
+        <h1 className="text-4xl md:text-6xl font-extrabold">
+          Translate. <span className="text-cyan-400">Execute.</span> Explain.
+        </h1>
+
+        <p className="mt-4 text-gray-400 text-lg max-w-3xl mx-auto">
+          Instantly translate code between Python, Java, C, C++, JavaScript and
+          TypeScript with AI. Execute your translated code and understand it with
+          built-in AI explanations.
+        </p>
+
+      </div>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+
+        <div className="d gap-5 flex-wrap mb-6">
 
           <LanguageSelector
             label="Source"
@@ -192,16 +206,18 @@ export default function Home() {
             onChange={setTargetLanguage}
             />
 
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
 
           <ConvertButton
             loading={loading}
             onClick={handleConvert}
+            className="w-full sm:w-auto"
           />
 
         <button
             onClick={clearAll}
             className="
+            w-full sm:w-auto
             px-6 py-3
             rounded-xl
             bg-red-500
@@ -218,8 +234,9 @@ export default function Home() {
         <button
             onClick={() => fileInputRef.current?.click()}
             className="
-                px-6
-                py-3
+            w-full sm:w-auto
+            px-6
+            py-3
                 rounded-xl
                 bg-violet-600
                 hover:bg-violet-500
@@ -244,7 +261,7 @@ export default function Home() {
 
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
           <div className="bg-[#101828] rounded-2xl border border-cyan-500/15 p-4">
 
@@ -256,7 +273,7 @@ export default function Home() {
               language={sourceLanguage}
               value={sourceCode}
               onChange={setSourceCode}
-              height="320px"
+              height="280px"
             />
 
           </div>
@@ -269,7 +286,7 @@ export default function Home() {
                 Translated Code
               </h2>
 
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
 
                 <button
                   onClick={copyCode}
@@ -293,7 +310,7 @@ export default function Home() {
               language={targetLanguage}
               value={translatedCode}
               readOnly
-              height="320px"
+              height="300px"
             />
 
           </div>
@@ -338,7 +355,7 @@ export default function Home() {
 />
 
 </div>
-        <div className="grid grid-cols-2 gap-5 mt-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
 
           <OutputPanel title="Execution Output">
             {executionOutput}
@@ -356,7 +373,10 @@ export default function Home() {
 
     
         <p>
-          Built with ❤️ using Next.js · FastAPI · OpenRouter AI · Monaco Editor
+          Built by Shraddha Mune
+
+          Powered by
+          Next.js • FastAPI • OpenRouter
         </p>
   
 
